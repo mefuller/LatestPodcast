@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 import re
+import sys
 
 def get_latest_episode(rss_file):
     with open (rss_file, 'r') as feedfile:
@@ -19,5 +20,6 @@ def get_latest_episode(rss_file):
     
     
 if __name__ == "__main__":
-    addr = get_latest_episode("sounds.rss") #test file
+    rss_file = sys.argv[1] 
+    addr = get_latest_episode(rss_file) #test file
     print(addr)            
