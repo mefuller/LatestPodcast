@@ -1,5 +1,10 @@
 #! /bin/bash
 
+#system check as inspired by: https://gist.github.com/dprandzioch/5aae328bceac5e3b5c30
+[ -x "$(command -v wget)" ] || (echo "wget is not installed" && exit 1)
+[ -x "$(command -v cvlc)" ] || (echo "VLC is not installed" && exit 1)
+[ -x "$(command -v python)" ] || (echo "python is not installed" && exit 1)
+
 #get the episode listing: using Der Spiegel Nachrichten Updates
 #-N: overwrite existing file with (updated) version from server
 #-q: quiet turns off writing of local log by wget
